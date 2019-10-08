@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>抽象类</title>
+		<link rel="stylesheet" type="text/css" href="../css/demo.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/animation.css"/>
+		<link rel="stylesheet" type="tex t/css" href="../css/Class.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<script src="../js/jquery-3.3.1.js"></script>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/rgb.js"></script>	
+		<script src="../js/demo.js"></script>
+	</head>
+	<body>
+		<header id="header">
+			<p>Personal Note</p>
+			<p style="color: transparent;">by @kaiweiOvO</p>
+		</header>
+		<section id="section">
+			<ul id="menu">
+				<li><a style="text-align: center; padding:0; height: 23px; font-size: 22px;">JAVA</a></li>
+				<li><a href="数据类型.html">数据类型<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="循环结构.html">循环结构<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="分支结构.html">分支结构<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="方法.html">方法<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="构造器（构造方法）.html">构造器<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="修饰符.html">修饰符<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="继承.html">继承<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="重写和重载.html">重写和重载<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="多态.html">多态<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="封装.html">封装<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="javascript:(0)">抽象类<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="接口.html">接口<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="异常处理.html">异常处理<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			</ul>
+			<div class="content">
+				<div class="tp_p_n">
+					<div><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="封装.html">preview</a></div>
+					<div><a href="接口.html">next</a><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+				<div class="main_content">
+					<h1>抽象类</h1>
+					<hr>
+					
+					<p>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。
+					</p>
+					<p>抽象类除了不能实例化对象之外，类的其它功能依然存在，成员变量、成员方法和构造方法的访问方式和普通类一样。</p>
+					<p>由于抽象类不能实例化对象，所以抽象类必须被继承，才能被使用。也是因为这个原因，通常在设计阶段决定要不要设计抽象类。</p>
+					<p>父类包含了子类集合的常见的方法，但是由于父类本身是抽象的，所以不能使用这些方法。</p>
+					<p>在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。</p>
+					<hr><h2>抽象类</h2>
+					<p>在Java语言中使用abstract class来定义抽象类。如下实例：</p>
+					<pre>
+						
+		public abstract class people
+		{
+			private String name;
+			private int age;
+			private String gender;
+			private void prtMsg();
+			
+		}
+					</pre>
+					<p>需要注意的是：</p>
+					<ul>
+						<li>
+							<p>抽象类不能被实例化如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象</p>
+						</li>
+						<li>
+							<p>抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</p>
+						</li>
+						<li>
+							<p>抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。</p>
+						</li>
+						<li>
+							<p>构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。</p>
+						</li>
+						<li>
+							<p>抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。</p>
+						</li>
+					</ul>
+					<hr>
+					<h2>抽象方法</h2>
+					<p>
+					如果你想设计这样一个类，该类包含一个特别的成员方法，该方法的具体实现由它的子类确定，那么你可以在父类中声明该方法为抽象方法。</p><p> 
+					Abstract 关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。</p><p>
+					抽象方法没有定义，方法名后面直接跟一个分号，而不是花括号。</p>
+					<pre>
+						
+		public abstract class people
+		{
+			private String name;
+			private int age;
+			private String gender;
+			private void showName();
+			private void showAge();
+			private void showGender();
+			
+		}				
+					</pre>
+					<p>声明抽象方法会造成以下两个结果：</p>
+					<ul>
+						<li value="23">
+							如果一个类包含抽象方法，那么该类必须是抽象类。</li>
+						<li value="23">
+							任何子类必须重写父类的抽象方法，或者声明自身为抽象类。</li>
+					</ul>
+					<p>继承抽象方法的子类必须重写该方法。否则，该子类也必须声明为抽象类。最终，必须有子类实现该抽象方法，否则，从最初的父类到最终的子类都不能用来实例化对象。</p>
+					<p>如果Student类继承了People类，那么它必须实现People里的所有方法：</p>
+					<pre>
+						
+		public class Student extends People
+		{
+			private void showName()
+			{
+				///
+			}
+			private void showAge()
+			{
+				///
+			}
+			private void showGender()
+			{
+				///
+			}
+		}
+					</pre>
+					<p align="center">copy by <a href="https://www.runoob.com/">@菜鸟教程</a></p>
+
+
+				</div>
+				<div class="bt_p_n">
+					<div><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="封装.html">preview</a></div>
+					<div><a href="接口.html">next</a><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
+		<footer id="fot" class="fot">
+			<div id="about" class="about">
+				<div id="b_nav" class="b_nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="#header">Top</a></li>
+						<li><a href="javascrpt:(0)">About</a></li>
+					</ul>
+				</div>
+				<p>个人网站&nbsp;<a id="kaiweiOvO">@kaiweiOvO</a>&nbsp;Copyright&nbsp;&copy;&nbsp;2019</p>
+				<p>QQ&emsp;859438315</p>
+				<p>e_mail&emsp;kaiweiOvO@163.com</p>
+				<p>wechat</p>
+				<img src="../img/IMG_3529.PNG"/>
+			</div>
+		</footer>
+	</body>
+</html>

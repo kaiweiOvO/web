@@ -1,0 +1,52 @@
+@keyframes slide{
+	from{margin: 3% auto;}
+	to{margin: 5% auto;}
+}
+@keyframes title_slideUp{
+	from{transform: translate(0,50%); opacity: 0;}
+	to{transform: translate(0,0) opacity: 1;}	
+}
+@keyframes nav_slideDown{
+	from{margin-top: -70px;}
+	to{margin-top: 0;}
+}
+@keyframes trans1{
+	20%{margin-top: 5px;}
+	50%{margin-top: 20px;transform: rotate(0deg);}
+	80%{margin-top: 20px;transform: rotate(135deg);}
+	100%{margin-top: 20px;transform: rotate(135deg);}
+}
+@keyframes trans2{
+	20%{margin-top: 20px;}
+	50%{margin-top: 20px;transform: rotate(0deg);}
+	80%{margin-top: 20px;transform: rotate(135deg);}
+	100%{margin-top: 20px;transform: rotate(135deg);}
+}
+@keyframes trans3{
+	20%{margin-top: 35px;}
+	50%{margin-top: 20px;transform: rotate(0deg);}
+	80%{margin-top: 20px;transform: rotate(225deg);}
+	100%{margin-top: 20px;transform: rotate(225deg);}
+}
+@keyframes obj1_load{
+	from{margin-top: 40px; opacity: 0;}
+	to{margin-top: 0px; opacity: 1;}
+}
+@keyframes csl_load{
+	from{margin-top: 40px; opacity: 0;}
+	to{margin-top: 0px; opacity: 1;}
+}
+/*.obj_s,.obj_s_show:hover{
+	box-shadow: #353535 5px 5px 10px 0px;
+}*/
+.go:hover{
+	background-color: pink;
+	color: white;
+}
+#section ul li:hover a{
+	color: limegreen;
+}
+#section ul li:hover a i{
+	opacity: 1;
+	color: limegreen;
+}
