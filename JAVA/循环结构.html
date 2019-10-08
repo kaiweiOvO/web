@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环结构</title>
+		<link rel="stylesheet" type="text/css" href="../css/demo.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/animation.css"/>
+		<link rel="stylesheet" type="tex t/css" href="../css/Class.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<script src="../js/jquery-3.3.1.js"></script>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/rgb.js"></script>	
+		<script src="../js/demo.js"></script>
+	</head>
+	<body>
+		<header id="header">
+			<p>Personal Note</p>
+			<p style="color: transparent;">by @kaiweiOvO</p>
+		</header>
+		<section id="section">
+			<ul id="menu">
+				<li><a style="text-align: center; padding:0; height: 23px; font-size: 22px;">JAVA</a></li>
+				<li><a href="数据类型.html">数据类型<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="javascript:(0)">循环结构<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="分支结构.html">分支结构<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="方法.html">方法<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="构造器（构造方法）.html">构造器<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="修饰符.html">修饰符<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="继承.html">继承<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="重写和重载.html">重写和重载<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="循环结构.html">多态<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="封装.html">封装<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="抽象类.html">抽象类<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="接口.html">接口<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="异常处理.html">异常处理<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			</ul>
+			<div class="content">
+				<div class="tp_p_n">
+					<div><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="数据类型.html">preview</a></div>
+					<div><a href="分支结构.html">next</a><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+				<div class="main_content">
+					<h1>循环结构 - for, while 及 do...while</h1>
+					<p>顺序结构的程序语句只能被执行一次。如果您想要同样的操作执行多次,，就需要使用循环结构。
+					</p><p>Java中有三种主要的循环结构：</p>
+					<ul>
+						<li>
+							<strong>while</strong> 循环</li>
+						<li>
+							<strong>do&hellip;while</strong> 循环</li>
+						<li>
+							<strong>for</strong> 循环</li>
+					</ul>
+					<p>在Java5中引入了一种主要用于数组的增强型for循环。</p>
+					<hr>
+					<h2>while 循环</h2>
+					<p>while是最基本的循环，它的结构为：</p>
+					<div class="example">
+					<div class="example_code">
+					<div class="hl-main"><span class="hl-reserved">while</span><span class="hl-brackets">(</span><span class="hl-code"> 布尔表达式 </span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+					  </span><span class="hl-comment">//</span><span class="hl-comment">循环内容</span><span class="hl-comment"></span><span class="hl-code">
+					</span><span class="hl-brackets">}</span></div>
+					</div>
+					</div>
+					<p>只要布尔表达式为 true，循环就会一直执行下去。</p><hr />
+					<h2>do…while 循环</h2>
+					<p>对于 while 语句而言，如果不满足条件，则不能进入循环。但有时候我们需要即使不满足条件，也至少执行一次。</p>
+					<p>do…while 循环和 while 循环相似，不同的是，do…while 循环至少会执行一次。</p>
+					<pre>
+					do {
+					       //代码语句
+					}while(布尔表达式);
+					</pre>
+					<p>
+					<strong>注意：</strong>布尔表达式在循环体的后面，所以语句块在检测布尔表达式之前已经执行了。
+					如果布尔表达式的值为 true，则语句块一直执行，直到布尔表达式的值为 false。
+					</p><hr />
+					<h2>for循环</h2>
+					<p>虽然所有循环结构都可以用 while 或者 do...while表示，但 Java 提供了另一种语句 —— for 循环，使一些循环结构变得更加简单。
+					</p>
+					<p>for循环执行的次数是在执行前就确定的。语法格式如下：</p>
+					<div class="example">
+					<div class="example_code">
+					<div class="hl-main"><span class="hl-reserved">for</span><span class="hl-brackets">(</span><span class="hl-code">初始化; 布尔表达式; 更新</span><span class="hl-brackets">)</span><span class="hl-code"> </span><span class="hl-brackets">{</span><span class="hl-code">
+					    </span><span class="hl-comment">//</span><span class="hl-comment">代码语句</span><span class="hl-comment"></span><span class="hl-code">
+					</span><span class="hl-brackets">}</span></div>
+					</div>
+					</div>
+					<p>关于 for 循环有以下几点说明：</p>
+					<ul>
+						<li>
+							最先执行初始化步骤。可以声明一种类型，但可初始化一个或多个循环控制变量，也可以是空语句。</li>
+						<li>
+							然后，检测布尔表达式的值。如果为 true，循环体被执行。如果为false，循环终止，开始执行循环体后面的语句。</li>
+						<li>
+							执行一次循环后，更新循环控制变量。</li>
+						<li>
+							再次检测布尔表达式。循环执行上面的过程。</li>
+					</ul><hr />
+					<h2>Java 增强 for 循环</h2>
+					<p>Java5 引入了一种主要用于数组的增强型 for 循环。</p>
+					<p>Java 增强 for 循环语法格式如下:</p>
+					<div class="example">
+					<div class="example_code">
+					<div class="hl-main"><span class="hl-reserved">for</span><span class="hl-brackets">(</span><span class="hl-code">声明语句 : 表达式</span><span class="hl-brackets">)</span><span class="hl-code">
+					</span><span class="hl-brackets">{</span><span class="hl-code">
+					   </span><span class="hl-comment">//</span><span class="hl-comment">代码句子</span><span class="hl-comment"></span><span class="hl-code">
+					</span><span class="hl-brackets">}</span></div>
+					</div>
+					</div>
+					<p><strong>声明语句：</strong>声明新的局部变量，该变量的类型必须和数组元素的类型匹配。其作用域限定在循环语句块，其值与此时数组元素的值相等。
+					</p><p><strong>表达式：</strong>表达式是要访问的数组名，或者是返回值为数组的方法。</p>
+					<p align="center">copy by <a href="https://www.runoob.com/">@菜鸟教程</a></p>
+				</div>
+				<div class="bt_p_n">
+					<div><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="数据类型.html">preview</a></div>
+					<div><a href="分支结构.html">next</a><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
+		<footer id="fot" class="fot">
+			<div id="about" class="about">
+				<div id="b_nav" class="b_nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="#header">Top</a></li>
+						<li><a href="#csl">About</a></li>
+					</ul>
+				</div>
+				<p>个人网站&nbsp;<a id="kaiweiOvO">@kaiweiOvO</a>&nbsp;Copyright&nbsp;&copy;&nbsp;2019</p>
+				<p>QQ&emsp;859438315</p>
+				<p>e_mail&emsp;kaiweiOvO@163.com</p>
+				<p>wechat</p>
+				<img src="../img/IMG_3529.PNG"/>
+			</div>
+		</footer>
+	</body>
+</html>

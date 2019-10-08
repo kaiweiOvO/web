@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>接口</title>
+		<link rel="stylesheet" type="text/css" href="../css/demo.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/animation.css"/>
+		<link rel="stylesheet" type="tex t/css" href="../css/Class.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+		<script src="../js/jquery-3.3.1.js"></script>
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/rgb.js"></script>	
+		<script src="../js/demo.js"></script>
+	</head>
+	<body>
+		<header id="header">
+			<p>Personal Note</p>
+			<p style="color: transparent;">by @kaiweiOvO</p>
+		</header>
+		<section id="section">
+			<ul id="menu">
+				<li><a style="text-align: center; padding:0; height: 23px; font-size: 22px;">JAVA</a></li>
+				<li><a href="数据类型.html">数据类型<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="循环结构.html">循环结构<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="分支结构.html">分支结构<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="方法.html">方法<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="构造器（构造方法）.html">构造器<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="修饰符.html">修饰符<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="继承.html">继承<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="重写和重载.html">重写和重载<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="多态.html">多态<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="封装.html">封装<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="抽象类.html">抽象类<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="javascript:(0)">接口<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="异常处理.html">异常处理<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			</ul>
+			<div class="content">
+				<div class="tp_p_n">
+					<div><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="抽象类.html">preview</a></div>
+					<div><a href="异常处理.html">next</a><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+				<div class="main_content">
+					<h1>接口</h1>
+					<p>接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。</p>
+					<p>接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。</p>
+					<p>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。</p>
+					<p>接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。</p>
+					<h3>接口与类相似点：</h3>
+					<ul>
+						<li>
+							一个接口可以有多个方法。</li>
+						<li>
+							接口文件保存在 .java 结尾的文件中，文件名使用接口名。</li>
+						<li>
+							接口的字节码文件保存在 .class 结尾的文件中。</li>
+						<li>
+							接口相应的字节码文件必须在与包名称相匹配的目录结构中。</li>
+					</ul><h3>
+					接口与类的区别：</h3>
+					<ul>
+						<li>
+							接口不能用于实例化对象。</li>
+						<li>
+							接口没有构造方法。</li>
+						<li>
+							接口中所有的方法必须是抽象方法。</li>
+						<li>
+							接口不能包含成员变量，除了 static 和 final 变量。</li>
+						<li>
+							接口不是被类继承了，而是要被类实现。</li>
+						<li>
+							接口支持多继承。</li>
+					</ul>
+					<h3>接口特性</h3>
+					<ul>
+					<li>接口中每一个方法也是隐式抽象的,接口中的方法会被隐式的指定为 <strong>public abstract</strong>（只能是  public abstract，其他修饰符都会报错）。</li>
+					<li>接口中可以含有变量，但是接口中的变量会被隐式的指定为 <strong>public static final</strong> 变量（并且只能是 public，用 private 修饰会报编译错误）。</li>
+					<li>接口中的方法是不能在接口中实现的，只能由实现接口的类来实现接口中的方法。</li>
+					</ul>
+					
+					<h3>抽象类和接口的区别</h3>
+					<ul><li>
+					1. 抽象类中的方法可以有方法体，就是能实现方法的具体功能，但是接口中的方法不行。</li><li>
+					2. 抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 <strong>public static final</strong> 类型的。</li><li>
+					3. 接口中不能含有静态代码块以及静态方法(用 static 修饰的方法)，而抽象类是可以有静态代码块和静态方法。</li><li>
+					4. 一个类只能继承一个抽象类，而一个类却可以实现多个接口。</li>
+					
+					</ul>
+					<hr><h2>接口的声明</h2>
+					<p>接口的声明语法格式如下：</p>
+					<pre>
+	
+		interface 接口名称 [extends 其他的接口名] 
+		{
+       			//声明变量
+       			//抽象方法
+		}
+					</pre>
+					<p>Interface关键字用来声明一个接口。下面是接口声明的一个简单例子。</p>
+					<pre>
+						
+		public interface NameOfInterface
+		{
+		   	//任何类型 final, static 字段
+		  	//抽象方法
+		}
+					</pre>
+					</p>接口有以下特性：</p>
+					<ul>
+						<li>
+							接口是隐式抽象的，当声明一个接口的时候，不必使用<strong>abstract</strong>关键字。</li>
+						<li>
+							接口中每一个方法也是隐式抽象的，声明时同样不需要<strong>abstract</strong>关键字。</li>
+						<li>
+							接口中的方法都是公有的。</li>
+					</ul>
+					<hr><h2>接口的实现</h2>
+					
+					<p>当类实现接口的时候，类要实现接口中所有的方法。否则，类必须声明为抽象的类。</p>
+					<p>类使用implements关键字实现接口。在类声明中，Implements关键字放在class声明后面。</p>
+					<p>实现一个接口的语法，可以使用这个公式：</p>
+					<pre>
+						
+		...implements 接口名称[, 其他接口名称, 其他接口名称..., ...] ...
+					</pre>
+					<h3>实例</h3>
+					<pre>
+						
+		public class MammalInt implements Animal{
+		 
+		   public void eat(){
+		      System.out.println("Mammal eats");
+		   }
+		 
+		   public void travel(){
+		      System.out.println("Mammal travels");
+		   } 
+		 
+		   public int noOfLegs(){
+		      return 0;
+		   }
+		 
+		   public static void main(String args[]){
+		      MammalInt m = new MammalInt();
+		      m.eat();
+		      m.travel();
+		   }
+		}				
+					</pre>										
+					<p>以上实例编译运行结果如下:</p>
+					<pre>
+						
+		Mammal eats
+		Mammal travels
+					</pre>
+					<p>重写接口中声明的方法时，需要注意以下规则：</p>
+					<ul>
+						<li>
+							类在实现接口的方法时，不能抛出强制性异常，只能在接口中，或者继承接口的抽象类中抛出该强制性异常。</li>
+						<li>
+							类在重写方法时要保持一致的方法名，并且应该保持相同或者相兼容的返回值类型。</li>
+						<li>
+							如果实现接口的类是抽象类，那么就没必要实现该接口的方法。</li>
+					</ul>
+					<p>在实现接口的时候，也要注意一些规则：</p>
+					<ul>
+						<li>
+							一个类可以同时实现多个接口。</li>
+						<li>
+							一个类只能继承一个类，但是能实现多个接口。</li>
+						<li>
+							一个接口能继承另一个接口，这和类之间的继承比较相似。</li>
+					</ul><hr>
+					<h2>
+						接口的继承</h2>
+					<p>一个接口能继承另一个接口，和类之间的继承方式比较相似。接口的继承使用extends关键字，子接口继承父接口的方法。</p>
+					<p>下面的Sports接口被Hockey和Football接口继承：<p>
+					<pre>
+						
+		public interface Sports
+		{
+		   public void setHomeTeam(String name);
+		   public void setVisitingTeam(String name);
+		}
+		 
+		// 文件名: Football.java
+		public interface Football extends Sports
+		{
+		   public void homeTeamScored(int points);
+		   public void visitingTeamScored(int points);
+		   public void endOfQuarter(int quarter);
+		}
+		 
+		// 文件名: Hockey.java
+		public interface Hockey extends Sports
+		{
+		   public void homeGoalScored();
+		   public void visitingGoalScored();
+		   public void endOfPeriod(int period);
+		   public void overtimePeriod(int ot);
+		}				
+					</pre>
+					<p>Hockey接口自己声明了四个方法，从Sports接口继承了两个方法，这样，实现Hockey接口的类需要实现六个方法。</p><p>
+					相似的，实现Football接口的类需要实现五个方法，其中两个来自于Sports接口。
+					</p><hr>
+					<h2>接口的多继承</h2>
+					
+					<p>在Java中，类的多继承是不合法，但接口允许多继承。</p>
+					<p>在接口的多继承中extends关键字只需要使用一次，在其后跟着继承接口。
+					如下所示：</p>
+					<pre>
+						
+	public interface Hockey extends Sports, Event					
+					</pre>
+					<p>以上的程序片段是合法定义的子接口，与类不同的是，接口允许多继承，而 Sports及  Event 可能定义或是继承相同的方法
+					</p>
+					<hr><h2>
+					标记接口</h2>
+					
+					<p>最常用的继承接口是没有包含任何方法的接口。</p>
+					<p>标记接口是没有任何方法和属性的接口.它仅仅表明它的类属于一个特定的类型,供其他代码来测试允许做一些事情。</p>
+					<p>标记接口作用：简单形象的说就是给某个对象打个标（盖个戳），使对象拥有某个或某些特权。</p>
+					<p>例如：java.awt.event 包中的 MouseListener 接口继承的 java.util.EventListener 接口定义如下：</p>
+					<hr><h2>
+					标记接口</h2>
+					
+					<p>最常用的继承接口是没有包含任何方法的接口。</p>
+					<p>标记接口是没有任何方法和属性的接口.它仅仅表明它的类属于一个特定的类型,供其他代码来测试允许做一些事情。</p>
+					<p>标记接口作用：简单形象的说就是给某个对象打个标（盖个戳），使对象拥有某个或某些特权。</p>
+					<p>例如：java.awt.event 包中的 MouseListener 接口继承的 java.util.EventListener 接口定义如下：</p>
+					<pre>	
+		package java.util;
+		public interface EventListener
+		{}			
+					</pre>
+					<p>没有任何方法的接口被称为标记接口。标记接口主要用于以下两种目的：
+					</p>
+					<ul><li><strong>
+					建立一个公共的父接口：</strong><p>正如EventListener接口，这是由几十个其他接口扩展的Java API，你可以使用一个标记接口来建立一组接口的父接口。例如：当一个接口继承了EventListener接口，Java虚拟机(JVM)就知道该接口将要被用于一个事件的代理方案。
+					</p></li><li><strong>向一个类添加数据类型：</strong><p>这种情况是标记接口最初的目的，实现标记接口的类不需要定义任何接口方法(因为标记接口根本就没有方法)，但是该类通过多态性变成一个接口类型。</p></li></ul>
+					<p align="center">copy by <a href="https://www.runoob.com/">@菜鸟教程</a></p>
+
+
+				</div>
+				<div class="bt_p_n">
+					<div><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="抽象类.html">preview</a></div>
+					<div><a href="异常处理.html">next</a><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</section>
+		<footer id="fot" class="fot">
+			<div id="about" class="about">
+				<div id="b_nav" class="b_nav">
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="#header">Top</a></li>
+						<li><a href="#csl">About</a></li>
+					</ul>
+				</div>
+				<p>个人网站&nbsp;<a id="kaiweiOvO">@kaiweiOvO</a>&nbsp;Copyright&nbsp;&copy;&nbsp;2019</p>
+				<p>QQ&emsp;859438315</p>
+				<p>e_mail&emsp;kaiweiOvO@163.com</p>
+				<p>wechat</p>
+				<img src="../img/IMG_3529.PNG"/>
+			</div>
+		</footer>
+	</body>
+</html>
