@@ -11,100 +11,76 @@ $(function(){
     let ctx = canvas.getContext('2d');
     let imgs = [
     {
-        image: new Image(),
         src:'./resource/img/1.gif',
     },
     {
-        image: new Image(),
         src:'./resource/img/2.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/3.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/4.png',
     },
     {
-        image: new Image(),
         src:'./resource/img/5.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/6.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/7.gif',
     },
     {
-        image: new Image(),
         src:'./resource/img/8.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/9.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/10.png',
     },
     {
-        image: new Image(),
         src:'./resource/img/11.png',
     },
     {
-        image: new Image(),
         src:'./resource/img/12.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/13.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/14.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/15.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/16.gif',
     },
     {
-        image: new Image(),
         src:'./resource/img/17.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/18.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/19.gif',
     },
     {
-        image: new Image(),
         src:'./resource/img/20.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/21.jpg',
     },
     {
-        image: new Image(),
         src:'./resource/img/22.gif',
     },
     {
-        image: new Image(),
         src:'./resource/img/23.gif',
     }];
 
     imgs.map(function(img,index,arr){
-        img.image.src = img.src;
         img.x = 0;
         img.y = 100 + Math.random()*(canvas.height-300);
         img.angle = Math.random();
@@ -167,7 +143,6 @@ $(function(){
         setTimeout(() => {
             $('.me').show();
             $('.me').animate({opacity: 1},'slow');
-            $('.canvas').css({filter: blur(10)});
         }, 6000);
         var interval = setInterval(() => {
             ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -175,13 +150,15 @@ $(function(){
             {
                 if(imgs[i].delay <= times && imgs[i].show)
                 {
+                    var img = new Image();
+                    img.src = imgs[i].src;
                     ctx.save();
                     ctx.translate(imgs[i].x,imgs[i].y);
                     ctx.beginPath();
                     ctx.arc(0,0,50,0,4 * Math.PI);
                     ctx.clip();
                     ctx.rotate(imgs[i].deg * Math.PI / 180);
-                    ctx.drawImage(imgs[i].image,-50,-50,100,100);
+                    ctx.drawImage(img,-50,-50,100,100);
                     ctx.restore();
                     imgs[i].x+=10;
                     imgs[i].deg+=imgs[i].angle;
