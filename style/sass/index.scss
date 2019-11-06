@@ -213,6 +213,24 @@ body{
                 box-shadow: 3px 0 2px .2px rgba($color: #000000, $alpha: 0.3);
                 z-index: 90;
             }
+            // &:hover{
+            //     transform: translate(-70%,-50%);
+            //     transition: .4s;
+            // }
+            // &:hover::after{
+            //     transform: translate(-80%,-46%) skew(0,50deg) scaleX(0.4);
+            //     transition: .4s;
+            // }
+            // &:hover::before{
+            //     transform: translate(-84%,-5%) skew(0,50deg) scaleX(0.39);
+            //     transition: .4s;
+            // }
+            // &:hover .file{
+            //     transform: translateX(60%);
+            //     transition: .4s;
+            // }
+        }
+        .folder-hover{
             &:hover{
                 transform: translate(-70%,-50%);
                 transition: .4s;
@@ -248,11 +266,45 @@ body{
     #daily{
         @extend %pagesize;
         background-image: linear-gradient(180deg,#34495e,#4bc3cc);
+        position: relative;
+        .canvas{
+            display: block;
+            position: absolute;
+            transform: translateY(70px);
+        }
+        .me{
+            position: absolute;
+            height: 30vh;
+            transform: translate(-50%,-50%);
+            transition: .3s;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            display: none;
+            z-index: 3;
+            opacity: 0;
+            cursor: pointer;
+            &:hover{
+                transform: translate(-50%,-50%) scale(1.1,1.1);
+                transition: .3s;
+            }
+            &:hover ::before{
+                content: '';
+            }
+            &:hover #helo{
+                animation: helo 1s infinite;
+            } 
+        }
     }
     #footer{
         width: 100%;
-        height: 300px;
+        height: auto;
+        padding: 20px 0;
         background-color: gray;
+        color: #fff;
+        img{
+            height: 20vh;
+        }
     }
     .nav-slide-down{
         position: fixed !important;
@@ -289,10 +341,6 @@ body{
         animation: liSlide .7s;
     }
 
-    @keyframes fadeIn{
-        from{opacity: 0;padding-top: 50px;}
-        to{opacity: 1;padding-top: 0;}
-    }
     @keyframes arrowSlide{
         from{padding-top: 20px;}
         to{padding-top: 0;}
@@ -313,6 +361,17 @@ body{
         to{
             transform: translatey(0);
             opacity: 1;
+        }
+    }
+    @keyframes helo{
+        0%{
+            transform: translate(-50%,-50%) rotate(0) scale(1,1);
+        }
+        50%{
+            transform: translate(-50%,-50%) rotate(22.5deg) scale(1.2,1.2);
+        }
+        100%{
+            transform: translate(-50%,-50%) rotate(45deg) scale(1,1);
         }
     }
     

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        .sun{
+            height: 300px;
+            width: 300px;
+            background: yellow;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+        }
+        .sun:hover .cav{
+            opacity: 1;
+            transition: .3s;
+            animation: sun-light 1s linear infinite;
+        }
+        .cav{
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: .3s;
+        }
+        @keyframes sun-light{
+            0%{
+                transform: translate(-50%,-50%) rotate(0) scale(1,1);
+            }
+            50%{
+                transform: translate(-50%,-50%) rotate(22.5deg) scale(1.2,1.2);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotate(45deg) scale(1,1);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sun"><canvas class="cav"></canvas></div>
+    <script>
+        var cav = document.getElementsByClassName('cav')[0];
+        cav.width = 400;
+        cav.height = 400;
+        var ctx = cav.getContext('2d');
+        for(var i = 0;i <= 16; i++)
+        {
+            ctx.save();
+            ctx.translate(200,200);
+            ctx.rotate(i*22.5 * Math.PI / 180);
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 20;
+            ctx.lineCap = 'round';
+            ctx.moveTo(-190,0);
+            ctx.lineTo(-160,0);
+            ctx.stroke();
+            ctx.restore();
+        }
+    </script>
+</body>
+</html>
