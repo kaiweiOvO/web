@@ -53,20 +53,21 @@
                 })
                 container.appendChild(heart);
             }
+            function get_time(){
+                setTimeout(get_time,1000);
+                let met = new Date('2019/10/25 17:40:00');
+                let now = new Date();
+                let time = now.getTime() - met.getTime();
+                let seconds = Math.floor(time / 1000);
+                let mins = Math.floor(seconds / 60);
+                let hours = Math.floor(mins / 60);
+                let days = Math.floor(hours / 24);
+                let date = `${days}:${hours % 24}:${mins % 60}:${seconds % 60}`
+                document.getElementById('time').innerHTML = date;
+            }
+            get_time();
         }
-        function get_time(){
-            setTimeout(get_time,1000);
-            let met = new Date('2019/10/25 17:40:00');
-            let now = new Date();
-            let time = now.getTime() - met.getTime();
-            let seconds = Math.floor(time / 1000);
-            let mins = Math.floor(seconds / 60);
-            let hours = Math.floor(mins / 60);
-            let days = Math.floor(hours / 24);
-            let date = `${days}:${hours % 24}:${mins % 60}:${seconds % 60}`
-            document.getElementById('time').innerHTML = date;
-        }
-        get_time();
+        
     </script>
 </head>
 <body>
