@@ -6,7 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{margin: 0;padding: 0;}
+        *{
+            margin: 0;
+            padding: 0;
+            -moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
         body{
             background-color: #000;
         }
@@ -63,8 +73,11 @@
                 let mins = Math.floor(seconds / 60);
                 let hours = Math.floor(mins / 60);
                 let days = Math.floor(hours / 24);
-                let date = `${days}:${hours % 24}:${mins % 60}:${seconds % 60}`
+                let date = `${days}:${checkTime(hours % 24)}:${checkTime(mins % 60)}:${checkTime(seconds % 60)}`
                 document.getElementById('time').innerHTML = date;
+            }
+            function checkTime(t){
+                return t<10 ? '0'+t : t;
             }
             get_time();
         }
