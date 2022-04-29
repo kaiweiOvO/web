@@ -74,7 +74,7 @@
                 let mins = Math.floor(seconds / 60);
                 let hours = Math.floor(mins / 60);
                 let days = Math.floor(hours / 24);
-                let date = `${days}天$ {checkTime(hours % 24)}小时 ${checkTime(mins % 60)}分钟 ${checkTime(seconds % 60)}秒`
+                let date = `${days}天 ${checkTime(hours % 24)}小时 ${checkTime(mins % 60)}分钟 ${checkTime(seconds % 60)}秒`
                 document.getElementById('time').innerHTML = date;
             }
             function checkTime(t){
